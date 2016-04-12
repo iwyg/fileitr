@@ -1,0 +1,29 @@
+{
+  "name": "thapp/fileitr",
+  "description": "Bunch of fileiterators",
+  "type": "package",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "iwyg",
+      "email": "mail@thomas-appel.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php":"^5.6 || ^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Thapp\\Fileitr\\":"src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Thapp\\Fileitr\\Tests\\":"tests/"
+    }
+  }
+}
