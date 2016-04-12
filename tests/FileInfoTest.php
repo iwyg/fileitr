@@ -11,4 +11,13 @@ class FileInfoTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertInstanceOf(FileInfo::class, new FileInfo(__FILE__));
     }
+
+    /** @test */
+    public function itToArrayShouldContainMimeType()
+    {
+        $info = new FileInfo(__FILE__);
+
+        $this->assertArrayHasKey('mimetype', $info->toArray());
+        $this->assertArrayHasKey('extension', $info->toArray());
+    }
 }
