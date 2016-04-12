@@ -17,9 +17,23 @@ class RecursiveDirectoryIteratorTest extends \PHPUnit_Framework_TestCase
     {
         $itr = new RecursiveDirectoryIterator(__DIR__, 1, RecursiveDirectoryIterator::SKIP_DOTS);
 
-        $result = array_values(iterator_to_array($itr));
+        $result = iterator_to_array($itr);
 
         $this->assertInstanceOf('Thapp\Fileitr\FileInfo', current($result));
+    }
+
+    /** @test */
+    public function itShouldThrowOnInvalidFlags()
+    {
+        try {
+            $itr = new RecursiveDirectoryIterator(__DIR__, 1, RecursiveDirectoryIterator::CURRENT_AS_SELF);
+        } catch (\InvalidArgumentException $e) {
+
+            $this->assertSame(
+                $e->getMessage(),
+                sprintf('%s only supports FilesystemIterator::CURRENT_AS_FILEINFO.', RecursiveDirectoryIterator::class)
+            );
+        }
     }
 
     /** @test */
@@ -27,7 +41,7 @@ class RecursiveDirectoryIteratorTest extends \PHPUnit_Framework_TestCase
     {
         $itr = new RecursiveDirectoryIterator(__DIR__, -1, RecursiveDirectoryIterator::SKIP_DOTS);
 
-        $result = array_values(iterator_to_array($itr));
+        $result = iterator_to_array($itr);
 
         $this->assertEquals("", current($result)->getRelativePath());
         $this->assertTrue(0 === substr_count(current($result)->getRelativePathname(), DIRECTORY_SEPARATOR));

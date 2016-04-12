@@ -40,7 +40,7 @@ class RecursiveDirectoryIterator extends BaseIterator
     {
         if ($flags & (FilesystemIterator::CURRENT_AS_SELF|FilesystemIterator::CURRENT_AS_PATHNAME)) {
             throw new InvalidArgumentException(
-                sprintf('%s only supports FilesystemIterator::CURRENT_AS_FILEINFO', __CLASS__)
+                sprintf('%s only supports FilesystemIterator::CURRENT_AS_FILEINFO.', __CLASS__)
             );
         }
 
