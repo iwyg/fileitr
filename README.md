@@ -31,7 +31,7 @@ a regular expression as filter.
 <?php
 use Thapp\Fileitr\PatternIterator;
 
-// iterates over a maximum directory depth of 2, searching for files with a '.php' usffix
+// iterates over a maximum directory depth of 2, searching for files with a '.php' suffix
 $itr = new PatternIterator($path, '/\.(php)$/', 2, -1, $flags);
 
 // iterates over a maximum directory depth of 1, and limits overall files to 3.
