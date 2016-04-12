@@ -1,5 +1,19 @@
 # Filesystem itererators
 
+[![Author](http://img.shields.io/badge/author-iwyg-blue.svg?style=flat-square)](https://github.com/iwyg)
+[![Source Code](http://img.shields.io/badge/source-thapp/fileitr-blue.svg?style=flat-square)](https://github.com/iwyg/fileitr/tree/master)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/iwyg/fileitr/blob/master/LICENSE.md)
+
+[![Build Status](https://img.shields.io/travis/iwyg/fileitr/master.svg?style=flat-square)](https://travis-ci.org/iwyg/fileitr)
+[![Code Coverage](https://img.shields.io/coveralls/iwyg/fileitr/master.svg?style=flat-square)](https://coveralls.io/r/iwyg/fileitr)
+[![HHVM](https://img.shields.io/hhvm/thapp/fileitr/dev-master.svg?style=flat-square)](http://hhvm.h4cc.de/package/thapp/fileitr)
+
+## Requirements
+
+```bash
+php >= 5.6
+```
+
 ## Installation
 ```bash
 > composer require thapp/fileitr
