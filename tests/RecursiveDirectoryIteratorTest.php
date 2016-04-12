@@ -15,22 +15,22 @@ class RecursiveDirectoryIteratorTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function itShouldReturnFileInfoObjects()
     {
-        $itr = new RecursiveDirectoryIterator(__DIR__, 1);
+        $itr = new RecursiveDirectoryIterator(__DIR__, 1, RecursiveDirectoryIterator::SKIP_DOTS);
 
         $result = array_values(iterator_to_array($itr));
 
-        $this->assertInstanceOf('Thapp\Fileitr\FileInfo', $result[0]);
+        $this->assertInstanceOf('Thapp\Fileitr\FileInfo', current($result));
     }
 
     /** @test */
     public function itShouldSetRelativePathsOnFileInfos()
     {
-        $itr = new RecursiveDirectoryIterator(__DIR__, 1, RecursiveDirectoryIterator::SKIP_DOTS);
+        $itr = new RecursiveDirectoryIterator(__DIR__, -1, RecursiveDirectoryIterator::SKIP_DOTS);
 
         $result = array_values(iterator_to_array($itr));
 
-        $this->assertEquals("", $result[0]->getRelativePath());
-        $this->assertTrue(0 === substr_count($result[0]->getRelativePathname(), DIRECTORY_SEPARATOR));
+        $this->assertEquals("", current($result)->getRelativePath());
+        $this->assertTrue(0 === substr_count(current($result)->getRelativePathname(), DIRECTORY_SEPARATOR));
     }
 
     /** @test */

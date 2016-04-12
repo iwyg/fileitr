@@ -19,7 +19,6 @@ class PatternIteratorTest extends \PHPUnit_Framework_TestCase
 
         $files = iterator_to_array($itr);
 
-        var_dump(count($files));
         $this->assertTrue(count($files) > 1);
 
     }
@@ -34,6 +33,5 @@ class PatternIteratorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(count($files) === 1);
 
         $vals = array_values($files);
-        var_dump($vals[0]);
     }
 }

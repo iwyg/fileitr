@@ -11,11 +11,4 @@ class FileInfoTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertInstanceOf(FileInfo::class, new FileInfo(__FILE__));
     }
-
-    /** @test */
-    public function itIsExpectedThat()
-    {
-        $info = new FileInfo(__FILE__, '', '');
-        var_dump($info);
-    }
 }
