@@ -28,7 +28,6 @@ class RecursiveDirectoryIteratorTest extends \PHPUnit_Framework_TestCase
         try {
             $itr = new RecursiveDirectoryIterator(__DIR__, 1, RecursiveDirectoryIterator::CURRENT_AS_SELF);
         } catch (\InvalidArgumentException $e) {
-
             $this->assertSame(
                 $e->getMessage(),
                 sprintf('%s only supports FilesystemIterator::CURRENT_AS_FILEINFO.', RecursiveDirectoryIterator::class)
